@@ -26,7 +26,7 @@ class CarInterface(CarInterfaceBase):
     ret.safetyConfigs = [get_safety_config(car.CarParams.SafetyModel.toyota)]
     ret.safetyConfigs[0].safetyParam = EPS_SCALE[candidate]
 
-    ret.steerActuatorDelay = 0.12  # Default delay, Prius has larger delay
+    ret.steerActuatorDelay = -0.03  # Default delay, Prius has larger delay
     ret.steerLimitTimer = 0.4
     ret.hasZss = 0x23 in fingerprint[0]  # Detect whether car has accurate ZSS
     ret.steerRateCost = 0.5 if ret.hasZss else 1.0
